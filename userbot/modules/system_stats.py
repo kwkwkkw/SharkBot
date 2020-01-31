@@ -119,23 +119,18 @@ async def pipcheck(pip):
         await pip.edit("`Use .help pip to see an example`")
 
 
-@register(outgoing=True, pattern="^.on$")
-async def amireallyalive(on):
-    """ For .on command, check if the bot is running.  """
+@register(outgoing=True, pattern="^.alive$")
+async def amireallyalive(alive):
+    """ For .alive command, check if the bot is running.  """
     await on.edit("`"
-                     "i am ON My Mastor \n\n"
+                     "Hi! \n\n"
                      " \n\n"
-                     "botdo is ON \n\n"
-                     f"Telethon version: {version.__version__} \n"
-                     f"Python: {python_version()} \n"
+                     "Bot Running in Background \n\n"
+                     f"Telethon : v{version.__version__} \n"
+                     f"Python : v{python_version()} \n"
                      f"------------------------------------ \n"
                      f"User: {DEFAULTUSER} \n"
-                     " \n\n"
-                     f"Creator: Mayur Karaniya \n"
-                     " \n\n"
-                     f"Owner: 3Cube TeKnoways \n"
-                     " \n\n"
-                     f"Userbot: testuserbot "
+                     " \n"
                      "`")    
 
 
@@ -170,9 +165,9 @@ CMD_HELP.update(
     {"pip": ".pip <module(s)>\
     \nUsage: Does a search of pip modules(s)."})
 CMD_HELP.update({
-    "on":
-    ".on\
-    \nUsage: Type .on to see wether your bot is working or not.\
+    "alive":
+    ".alive\
+    \nUsage: Type .alive to see wether your bot is working or not.\
     \n\n.aliveu <text>\
     \nUsage: Changes the 'user' in alive to the text you want.\
     \n\n.resetalive\
